@@ -1,13 +1,21 @@
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>this is a site</title>
-</head>
-<body>
+---
+layout: layout
+---
 
-<h1>Demo site</h1>
-<p>This is an index page</p>
+Please login to access gated content.
 
-</body>
-</html>
+<form id="login" action="/.netlify/functions/login" method="POST">
+  <input type="text" name="accesscode" id="accesscode">
+  <input type="submit">
+</form>
+
+<script>
+let accessCode = document.getElementById("accesscode").value;
+document.getElementById("login").addEventListener("submit", function(event) {
+  fetch('/.netlify/functions/login', {method: "POST", body:"accesscode="+accessCode})
+  .then(response => response.text())
+  .then(data => location.href=data);
+  event.preventDefault();
+});
+
+</script>
