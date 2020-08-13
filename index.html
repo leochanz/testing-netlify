@@ -10,6 +10,12 @@ Please login to access gated content.
 </form>
 
 <script>
+
+module.exports = function(eleventyConfig) {
+  // If we use Netlify and has the _redirects file.
+  eleventyConfig.addPassthroughCopy("_redirects");
+};
+  
 let accessCode = document.getElementById("accesscode").value;
 document.getElementById("login").addEventListener("submit", function(event) {
   fetch('/.netlify/functions/login', {method: "POST", body:"accesscode="+accessCode})
