@@ -21,3 +21,17 @@ exports.handler = (event, context, callback) => {
     body: "Response from login"
   });
 }
+
+exports.handler = (event, context, callback) => {
+
+  result = "/"
+
+  if (event.body == "accesscode=demo") {
+    result = "/super-long-url-here-to-hide-the-gated-content/"
+  }
+
+  callback(null, {
+    statusCode: 200,
+    body: result
+  });
+}
