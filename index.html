@@ -10,6 +10,15 @@ Please login to access gated content.
 </form>
 
 <script>
+  
+  $("#login").submit(function(e) {
+  e.preventDefault();
+
+  var $form = $(this);
+  $.post($form.attr("action"), $form.serialize()).then(function() {
+    alert("Thank you!");
+  });
+});
 
 module.exports = function(eleventyConfig) {
   // If we use Netlify and has the _redirects file.
