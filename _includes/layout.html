@@ -13,10 +13,21 @@
   </style>
 </head>
 <body>
+  
   <header>
     <nav>
       <span>A sample blog</span>
       <a href='/'>Home</a>
+      <div class="row">
+      <ul>
+      <li>Link 1</li>
+      <li>Link 2</li>
+      <li>Link 3</li>
+    </ul>
+      </div>
+      <div class="row">
+       Website Title here
+      </div>
     </nav>
      <ul>
      {% for post in collections.post reversed %} 
@@ -27,11 +38,30 @@
    </li>
     {% endfor %} 
     </ul>
-  </header>
- 
+</header>
+
+<div class="row">
+  <article>
+
+    <p>Content paragraphs go here.</p>
 <main>
     {{content}}
 </main>
- 
+   </article>
+
+<footer>
+      <div class="row">
+    Copyright goes here.
+      Author: Makzan
+        </div>
+</footer>
+
+  
+
+
+
+</footer>
+  
+
 </body>
 </html>
