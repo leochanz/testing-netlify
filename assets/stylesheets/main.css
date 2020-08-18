@@ -1,0 +1,38 @@
+html, body {
+  background-image: linear-gradient(#f2e6ff,#ffffff);
+  width:100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-repeat: repeat-x;
+}
+
+form{
+  background-color:cyan;
+}
+
+p {
+  font-size:5em;
+}
+
+
+img {
+	display: block;
+}
+
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+li img{
+	margin:2px;
+}
